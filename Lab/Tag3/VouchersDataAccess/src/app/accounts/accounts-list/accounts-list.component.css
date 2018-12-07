@@ -1,0 +1,13 @@
+tr {
+  cursor: pointer;
+}
+
+.tblCMD {
+  color: black;
+  font-weight: bold;
+}
+
+.center,
+.center a {
+  text-align: center;
+}

@@ -1,0 +1,46 @@
+<div class="cmdPanelSmall">
+  <div class="row">
+    <div class="col-md-8"><span>Selected Detail:</span></div>
+    <div class="col-md-4 rightCell">
+      <span class="right">
+        <a
+          (click)="updateAccount(currentAccount)"
+          class="btn btn-xs btn-default"
+          >Save Detail</a
+        >
+      </span>
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="row spacedRow">
+    <div class="col-md-1">
+      <input
+        type="text"
+        [(ngModel)]="currentAccount.ID"
+        readonly
+        class="form-control input-sm"
+      />
+    </div>
+
+    <div class="col-md-5">
+      <input
+        type="text"
+        [(ngModel)]="currentAccount.Name"
+        size="40"
+        placeholder="Text:"
+        class="form-control input-sm"
+      />
+    </div>
+
+    <div class="col-md-2">
+      <input
+        type="checkbox"
+        [(ngModel)]="currentAccount.Expense"
+        size="15"
+        class="form-control input-sm vdElement"
+      />
+    </div>
+  </div>
+</div>

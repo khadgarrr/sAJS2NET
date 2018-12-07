@@ -1,0 +1,9 @@
+<app-accounts-list
+  (onCurrentAccount)="readUrl()"
+  [accounts]="accounts"
+></app-accounts-list>
+<app-account-edit
+  *ngIf="currentAccount"
+  (onUpdateAccount)="updateAccount($event)"
+  [currentAccount]="currentAccount"
+></app-account-edit>

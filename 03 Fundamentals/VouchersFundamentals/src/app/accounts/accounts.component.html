@@ -1,0 +1,20 @@
+<div class="section">
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Expense</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let a of data">
+          <td>{{ a.ID }}</td>
+          <td>{{ a.Name }}</td>
+          <td>{{ a.Expense }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

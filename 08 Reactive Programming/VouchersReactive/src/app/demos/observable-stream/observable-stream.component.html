@@ -1,0 +1,64 @@
+<div class="section">
+  <h4>Works with Mock Data - No Service needed</h4>
+  <br />
+</div>
+
+<div class="section" fxLayout="column" fxLayoutGap="10px">
+  <h4>Using Observables</h4>
+
+  <div>
+    <a (click)="createSingletonObservable()">Get Movie Singleton Observable</a>
+    | <a (click)="unsubscribeSingletonObservable()">Unsubscribe</a>
+  </div>
+  <a (click)="createArrayObservable()"
+    >Get Movie Array Observable - Simulate Stream</a
+  >
+  <a (click)="getArrayObservableFromService()"
+    >Get Movie Array Observable from Service</a
+  >
+  <a (click)="useES6Filter()">Use ES6 array.filter()</a>
+  <a (click)="useObsOperator()">Use Observalbe Operator</a>
+  <a (click)="addMovie()" *ngIf="addMovieVisible">Add Movie</a> <br />Also watch
+  console for output
+</div>
+
+<div [ngSwitch]="currentView">
+  <div
+    *ngSwitchCase="view.SingletonObservable"
+    class="section"
+    style="padding: 20px 20px"
+  >
+    {{ (MovieSingleton | async)?.title }}
+  </div>
+
+  <div *ngSwitchCase="view.Array" fxLayout="column" class="section">
+    <h4>createArrayObservable()</h4>
+    <div fxLayout="row wrap">
+      <app-movie-renderer
+        *ngFor="let mi of movies"
+        [item]="mi"
+        [isPlaying]="true"
+      ></app-movie-renderer>
+    </div>
+  </div>
+
+  <div *ngSwitchCase="view.Dashboard" class="section">
+    <div><h4>Now Playing</h4></div>
+    <div fxLayout="row wrap">
+      <app-movie-renderer
+        *ngFor="let mi of playingArray"
+        [item]="mi"
+        [isPlaying]="true"
+      ></app-movie-renderer>
+    </div>
+
+    <div><h4>Upcoming</h4></div>
+    <div fxLayout="row wrap">
+      <app-movie-renderer
+        *ngFor="let mi of upcomingArray"
+        [item]="mi"
+        [isPlaying]="false"
+      ></app-movie-renderer>
+    </div>
+  </div>
+</div>
